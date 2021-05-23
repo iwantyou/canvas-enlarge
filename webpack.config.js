@@ -1,15 +1,16 @@
 const path = require('path')
 
-console.log("procee", process.env.mode)
-
+const IS_DEV =  process.env.mode === "development" ? true: false
 module.exports = {
-    mode: process.env.mode || "development",
-    entry: path.resolve("./demo/index.tsx"),
+    mode: process.env.mode,
+    entry: IS_DEV ? path.resolve("./demo/index.tsx") : path.resolve('src'),
     output: {
-        filename: "canvas.js",
-        path: path.resolve('./demo'),
-        libraryTarget: "umd",
-        libraryExport: "default"
+        filename: IS_DEV ? "canvas-enlarge.js" : "index.min.js",
+        path: IS_DEV ? path.resolve('./demo') : path.resolve("./dist"),
+        ...Object.assign({}, IS_DEV ? {} : {
+            libraryTarget: "umd",
+            libraryExport: "default"
+        })
     },
     resolve: {
         modules: ["node_modules"],
@@ -50,18 +51,18 @@ module.exports = {
             }
         ]
     },
-    // externals: {
-    //     "react": {
-    //         commonjs: "react",
-    //         amd: "react",
-    //         root: "React"
-    //         commonjs2: "react",
-    //     },
-    //     "react-dom": {
-    //         root: "ReactDom",
-    //         amd: "react-dom",
-    //         commonjs: "react-dom",
-    //         commonjs2: "react-dom",
-    //     }
-    // }
+    externals: Object.assign({}, !IS_DEV ? {
+        "react": {
+            commonjs: "react",
+            amd: "react",
+            root: "React",
+            commonjs2: "react",
+        },
+        "react-dom": {
+            root: "ReactDom",
+            amd: "react-dom",
+            commonjs: "react-dom",
+            commonjs2: "react-dom",
+        }
+    }: {})
 }
