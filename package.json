@@ -1,6 +1,6 @@
 {
   "name": "canvas-enlarge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "用于react的canvas图片放大和移动组件",
   "main": "dist/index.js",
   "scripts": {
