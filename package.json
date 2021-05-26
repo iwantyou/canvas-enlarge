@@ -2,7 +2,7 @@
   "name": "canvas-enlarge",
   "version": "1.0.0",
   "description": "用于react的canvas图片放大和移动组件",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "mode=development webpack serve --inline --config webpack.config.js --content-base demo ",
     "build": "yarn run clean && mode=production webpack --config webpack.config.js",
@@ -15,6 +15,13 @@
   ],
   "author": "duzb",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iwantyou/canvas-enlarge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iwantyou/canvas-enlarge/issues"
+  },
   "dependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
@@ -39,7 +46,7 @@
     "react": ">=15",
     "react-dom": ">=15"
   },
-  "typings": "types",
+  "typings": "types/index.d.ts",
   "files": [
     "dist/**/*",
     "types/*.d.ts"

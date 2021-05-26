@@ -5,7 +5,7 @@ module.exports = {
     mode: process.env.mode,
     entry: IS_DEV ? path.resolve("./demo/index.tsx") : path.resolve('src'),
     output: {
-        filename: IS_DEV ? "canvas-enlarge.js" : "index.min.js",
+        filename: IS_DEV ? "canvas-enlarge.js" : "index.js",
         path: IS_DEV ? path.resolve('./demo') : path.resolve("./dist"),
         ...Object.assign({}, IS_DEV ? {} : {
             libraryTarget: "umd",

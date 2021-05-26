@@ -7,11 +7,12 @@
       "moduleResolution": "node",
       "strict": true,
       "jsx": "react",
-      "sourceMap": false,
+      "sourceMap": true,
       "esModuleInterop": true,
       "module": "esnext",
       "resolveJsonModule": true,
       "isolatedModules": false,
+      "declaration": true,
     },
     "include": ["src", "demo"],
     "exclude": ["node_modules"]
