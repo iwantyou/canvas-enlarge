@@ -20,6 +20,9 @@ const createConfig = (format, env) => {
     if (format === "umd" || format === "iife") {
         config.output.golbals = golbals;
     }
+    if(env === "production"){
+        config.output.file = `${format}/${pkg.name}.min.js`
+    }
     return config;
 };
 let config;
