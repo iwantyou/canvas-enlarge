@@ -12,9 +12,9 @@
       "module": "esnext",
       "resolveJsonModule": true,
       "isolatedModules": false,
-      "declaration": true,
+      "noEmit": true
     },
-    "include": ["src", "demo"],
+    "include": ["src"],
     "exclude": ["node_modules"]
   }
   
