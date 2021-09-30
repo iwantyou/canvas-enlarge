@@ -2,16 +2,16 @@
     "name": "canvas-enlarge",
     "version": "1.0.1",
     "description": "用于react的canvas图片放大和移动组件",
-    "main": "dist/index.js",
+    "main": "index.js",
     "module": "esm/canvas-enlarge.js",
     "scripts": {
-        "build": "rollup -c",
-        "build:umd": "cross-env NODE_ENV=umd rollup -c",
-        "build:esm": "cross-env NODE_ENV=esm rollup -c",
-        "build:cjs": "cross-env NODE_ENV=cjs rollup -c",
-        "umd": "yarn build:umd",
+        "build": " cross-env NODE_ENV=production rollup  -c",
+        "build:umd": "cross-env BUILD_FORMAT=umd rollup -c",
+        "build:esm": "cross-env BUILD_FORMAT=esm rollup -c",
+        "build:cjs": "cross-env BUILD_FORMAT=cjs rollup -c",
+        "umd": " NODE_ENV=production yarn build:umd",
         "esm": "yarn build:esm",
-        "cjs": "yarn build:cjs"
+        "cjs": " NODE_ENV=production yarn build:cjs"
     },
     "keywords": [
         "react",
